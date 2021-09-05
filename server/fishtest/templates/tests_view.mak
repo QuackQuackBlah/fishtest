@@ -238,13 +238,7 @@
    <th>Info</th>
    <th>Last Updated</th>
    <th>Played</th>
-%if not 'pentanomial' in run['results'].keys():
-   <th>Wins</th>
-   <th>Losses</th>
-   <th>Draws</th>
-%else:
    <th>Pentanomial&nbsp;[0&#8209;2]</th>
-%endif
    <th>Crashes</th>
    <th>Time</th>
 
@@ -293,9 +287,7 @@
    <td>${str(task.get('last_updated', '-')).split('.')[0]}</td>
    <td>${total} / ${task['num_games']}</td>
 %if not 'pentanomial' in run['results'].keys():
-   <td>${stats.get('wins', '-')}</td>
-   <td>${stats.get('losses', '-')}</td>
-   <td>${stats.get('draws', '-')}</td>
+   <td>-</td>
 %else:
 <%
    p=stats.get('pentanomial',5*[0])
